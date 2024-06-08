@@ -5,7 +5,7 @@ import WeatherWidget from './components/WeatherWidgets';
 
 export default function App() {
   return (
-    <div>
+    <div className='main-dashboard'>
       <Header />
       <Toggle left='°F' right='°C' />
       <div className='seven-day-forecast'>
