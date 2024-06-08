@@ -5,8 +5,7 @@ export default function App() {
   return (
     <div>
       <Header />
-      <p>Body</p>
-      <Toggle />
+      <Toggle left='°F' right='°C' />
     </div>
   );
 }

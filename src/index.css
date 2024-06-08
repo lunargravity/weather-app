@@ -67,6 +67,7 @@ code {
   display: inline-block;
   width: 73px;
   height: 40px;
+  margin: 1em;
 }
 
 /* Hides default HMTL checkbox*/
