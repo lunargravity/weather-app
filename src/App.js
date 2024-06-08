@@ -11,6 +11,11 @@ export default function App() {
       <div className='seven-day-forecast'>
         <CurrentWeather />
         <WeatherWidget />
+        <WeatherWidget />
+        <WeatherWidget />
+        <WeatherWidget />
+        <WeatherWidget />
+        <WeatherWidget />
       </div>
     </div>
   );
