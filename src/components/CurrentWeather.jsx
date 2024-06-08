@@ -6,12 +6,12 @@ export default function CurrentWeather() {
         <h3 className='time'>TIME</h3>
       </div>
       <div className='temp-and-icon'>
-        <h1 className='temp'>77°F</h1>
-        <img
-          src='src\icons\square-placeholder.jpg'
-          alt='current-weather'
-          className='icon'
-        />
+        <div className='temp'>
+          <h1>77°F</h1>
+          <h4>64°/89°</h4>
+        </div>
+
+        <p className='icon'>&#9925;</p>
       </div>
     </div>
   );
