@@ -102,17 +102,25 @@ input:checked + .toggle-slider:before {
 }
 
 /*/ //////////////////////////////////////////////////////
+///////////////////FORECAST CONTAINER/////////////////////
+///////////////////////////////////////////////////////*/
+
+.seven-day-forecast {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+/*/ //////////////////////////////////////////////////////
 /////////////////CURRENT WEATHER WIDGET///////////////////
 ///////////////////////////////////////////////////////*/
 
 .current-weather-widget {
-  background-color: var(--color-ghost-white);
+  background-color: var(--color-electric-indigo);
   border-radius: 8px;
   border-spacing: 8px;
   border: 2px solid var(--color-electric-indigo);
   display: table;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-size: 16px;
   line-height: 16px;
   padding: 15px;
   margin: 1em;
@@ -121,19 +129,18 @@ input:checked + .toggle-slider:before {
 }
 
 .current-weather-widget .date-time {
-  color: var(--color-electric-indigo);
+  color: var(--color-ghost-white);
   display: table-row;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .current-weather-widget .date {
   display: table-cell;
-  padding-bottom: 10px;
 }
 
 .current-weather-widget .time {
   display: table-cell;
-  padding-bottom: 10px;
 }
 
 .current-weather-widget .temp-and-icon {
@@ -141,24 +148,67 @@ input:checked + .toggle-slider:before {
 }
 
 .current-weather-widget .temp {
-  color: var(--color-electric-indigo);
   display: table-cell;
-  font-size: x-large;
-  font-weight: 600;
+  font-size: 32px;
 }
 
-.current-weather-widget .temp h4 {
+.current-weather-widget h1 {
+  color: var(--color-ghost-white);
+  font-weight: 800;
+}
+
+.current-weather-widget h4 {
   color: var(--color-periwinkle);
+  font-size: 16px;
   font-weight: 400;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .current-weather-widget .icon {
-  text-shadow: 5px 5px 10px var(--color-electric-indigo);
   display: table-cell;
   font-size: 500%;
   text-align: right;
   vertical-align: middle;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
+
+/*/ //////////////////////////////////////////////////////
+/////////////////////WEATHER WIDGET///////////////////////
+///////////////////////////////////////////////////////*/
+
+.weather-widget {
+  background-color: var(--color-ghost-white);
+  border-radius: 8px;
+  border-spacing: 8px;
+  border: 3px solid var(--color-electric-indigo);
+  color: var(--color-electric-indigo);
+  display: grid;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  padding: 15px;
+  margin: 1em;
+  text-align: center;
+  width: 100px;
+}
+
+.weather-widget h3 {
+  margin: 0;
+}
+
+.weather-widget h1 {
+  font-style: normal;
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.weather-widget p {
+  font-size: 300%;
+  text-shadow: 5px 5px 10px var(--color-electric-indigo);
+  margin: 0;
+}
+
 /*/ //////////////////////////////////////////////////////
 ////////////////////FONT FACE RULES//////////////////////
 ///////////////////////////////////////////////////////*/
@@ -232,5 +282,60 @@ input:checked + .toggle-slider:before {
   font-family: 'Inter';
   src: url('fonts/Inter/Inter-ThinItalic.woff2') format('woff2');
   font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter/Inter-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter/Inter-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  src: url('./fonts/Inter/InterDisplay-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  src: url('./fonts/Inter/InterDisplay-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter/Inter-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter/Inter-ExtraBoldItalic.woff2') format('woff2');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  src: url('./fonts/Inter/InterDisplay-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  src: url('./fonts/Inter/InterDisplay-ExtraBoldItalic.woff2') format('woff2');
+  font-weight: 800;
   font-style: italic;
 }
