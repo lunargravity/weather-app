@@ -7,7 +7,9 @@ export default function App() {
     <div>
       <Header />
       <Toggle left='°F' right='°C' />
-      <CurrentWeather />
+      <div className='seven-day-forecast'>
+        <CurrentWeather />
+      </div>
     </div>
   );
 }
