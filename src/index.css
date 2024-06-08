@@ -1,3 +1,31 @@
+/*///////////////////////////////////////////////////////
+///////////////////////VARIABLES/////////////////////////
+///////////////////////////////////////////////////////*/
+
+html {
+  --color-electric-indigo: #5233ff;
+  --color-periwinkle: #b8b8ff;
+  --color-ghost-white: #f8f7ff;
+  --color-apricot: #ffd8be;
+  --color-sandy-brown: #ffad5c;
+}
+
+/*/ //////////////////////////////////////////////////////
+////////////////////////HEADING//////////////////////////
+///////////////////////////////////////////////////////*/
+
+.header-container h1 {
+  align-self: flex-start;
+  font-family: 'Inter', Arial, san-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 1em;
+}
+
+/*///////////////////////////////////////////////////////
+////////////////////////GENERAL//////////////////////////
+///////////////////////////////////////////////////////*/
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +38,160 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.header-container hr {
+  align-self: center;
+  border: none;
+  border-top: 2px solid var(--color-periwinkle);
+  margin: 0;
+  width: 97%;
+}
+
+/*/ //////////////////////////////////////////////////////
+///////////////////////CONTAINER/////////////////////////
+///////////////////////////////////////////////////////*/
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/*///////////////////////////////////////////////////////
+//////////////////////TOGGLE CSS/////////////////////////
+///////////////////////////////////////////////////////*/
+
+/* The box around slider */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 73px;
+  height: 40px;
+}
+
+/* Hides default HMTL checkbox*/
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: var(--color-periwinkle);
+  transition: background-color 0.4s ease-in-out;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: attr(data-content);
+  color: var(--color-ghost-white);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  height: 32px;
+  width: 32px;
+  left: 4px;
+  bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-electric-indigo);
+  border-radius: 4px;
+  transition: transform 0.5s ease-in-out;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--color-electric-indigo);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(32px);
+  background-color: var(--color-periwinkle);
+  color: var(--color-electric-indigo);
+  content: attr(data-alt-content);
+}
+
+/*/ //////////////////////////////////////////////////////
+////////////////////FONT FACE RULES//////////////////////
+///////////////////////////////////////////////////////*/
+
+/* Inter Light */
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter/Inter-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Inter Light Italic */
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter/Inter-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Inter Medium */
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter/Inter-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Inter Medium Italic */
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter/Inter-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Inter Regular */
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter/Inter-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Inter SemiBold */
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter/Inter-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Inter SemiBold Italic */
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter/Inter-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Inter Thin */
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter/Inter-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Inter Thin Italic */
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter/Inter-ThinItalic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
 }
