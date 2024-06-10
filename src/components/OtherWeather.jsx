@@ -1,4 +1,4 @@
-export default function WeatherWidget() {
+export default function OtherWeather() {
   return (
     <div className='weather-widget'>
       <h3>TUESDAY</h3>

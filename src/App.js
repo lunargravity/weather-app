@@ -1,7 +1,7 @@
 import CurrentWeather from './components/CurrentWeather';
 import Header from './components/Header';
 import Toggle from './components/Toggle';
-import WeatherWidget from './components/WeatherWidgets';
+import OtherWeather from './components/OtherWeather';
 
 export default function App() {
   return (
@@ -10,12 +10,12 @@ export default function App() {
       <Toggle left='°F' right='°C' />
       <div className='seven-day-forecast'>
         <CurrentWeather />
-        <WeatherWidget />
-        <WeatherWidget />
-        <WeatherWidget />
-        <WeatherWidget />
-        <WeatherWidget />
-        <WeatherWidget />
+        <OtherWeather />
+        <OtherWeather />
+        <OtherWeather />
+        <OtherWeather />
+        <OtherWeather />
+        <OtherWeather />
       </div>
     </div>
   );
