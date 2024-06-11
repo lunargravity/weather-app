@@ -166,6 +166,7 @@ input:checked + .toggle-slider:before {
 .current-weather-widget h1 {
   color: var(--color-ghost-white);
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .current-weather-widget h4 {
@@ -195,7 +196,6 @@ input:checked + .toggle-slider:before {
   border-spacing: 8px;
   border: 3px solid var(--color-electric-indigo);
   color: var(--color-electric-indigo);
-  display: grid;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   padding: 15px;
   margin: 1em;
@@ -208,7 +208,7 @@ input:checked + .toggle-slider:before {
 }
 
 .weather-widget h1 {
-  font-style: normal;
+  font-style: bold;
   font-size: 48px;
   font-weight: 800;
   margin: 0;
