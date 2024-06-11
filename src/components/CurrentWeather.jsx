@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { DateClass } from './DateClass';
 
 export default function CurrentWeather({ temperature }) {
   const [weatherData, setWeatherData] = useState(null);
+  const [currentTime, setCurrentTime] = useState(DateClass.currentTime());
+  const [dayOfWeek, setDayOfWeek] = useState(DateClass.dayOfWeek());
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,18 +19,27 @@ export default function CurrentWeather({ temperature }) {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const today = DateClass.getToday();
+      const newTime = DateClass.currentTime();
+      const newDayOfWeek = DateClass.dayOfWeek();
+      setCurrentTime(newTime);
+      setDayOfWeek(newDayOfWeek);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   if (!weatherData) {
-    // Render loading state or return null while data is being fetched
     return <p>Loading...</p>;
   }
-
-  console.log('main: ', weatherData.main);
 
   return (
     <div className='current-weather-widget'>
       <div className='date-time'>
-        <h3 className='date'>MONDAY</h3>
-        <h3 className='time'>11:59PM</h3>
+        <h3 className='date'>{dayOfWeek.toUpperCase()}</h3>
+        <h3 className='time'>{currentTime}</h3>
       </div>
       <div className='temp-and-icon'>
         <div className='temp'>
