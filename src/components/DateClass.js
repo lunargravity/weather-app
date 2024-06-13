@@ -1,4 +1,4 @@
-export class DateClass {
+export default class DateClass {
   static getToday() {
     return new Date();
   }
@@ -35,5 +35,43 @@ export class DateClass {
     const currentDayOfWeek = daysOfWeek[today.getDay()];
 
     return `${currentDayOfWeek}`;
+  }
+
+  static fiveDays() {
+    const fiveDays = [];
+    const today = this.getToday();
+    const daysOfWeek = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ];
+
+    for (let i = 0; i <= 5; i++) {
+      const index = (today.getDay() + i) % 7;
+      fiveDays.push(daysOfWeek[index]);
+    }
+
+    return fiveDays;
+  }
+
+  static fiveDates() {
+    const fiveDates = [];
+    const today = this.getToday();
+    const formatter = new Intl.DateTimeFormat('en-US', {
+      year: '2-digit',
+      month: '2-digit',
+      day: '2-digit',
+    });
+
+    for (let i = 0; i <= 5; i++) {
+      const nextDate = new Date(today);
+      nextDate.setDate(today.getDate() + i);
+      fiveDates.push(formatter.format(nextDate));
+    }
+    return fiveDates;
   }
 }
