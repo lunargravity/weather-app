@@ -6,15 +6,15 @@ import DateClass from './components/DateClass';
 
 export default function App() {
   const [isCelsius, setIsCelsius] = useState(false);
-  const days = DateClass.fiveDays();
-  const dates = DateClass.fiveDates();
+  const days = DateClass.getDays();
+  const dates = DateClass.getDates();
 
   const handleTempChange = () => {
     setIsCelsius(!isCelsius);
   };
 
-  const fiveDayDisplay = () => {
-    return days.slice(0, 5).map((day, index) => {
+  const ForecastDisplay = () => {
+    return days.slice(0, 7).map((day, index) => {
       return (
         <ForecastWidget
           key={index}
@@ -30,13 +30,17 @@ export default function App() {
   return (
     <div>
       <Header />
-      <Toggle
-        left='°F'
-        right='°C'
-        checked={isCelsius}
-        onChange={handleTempChange}
-      />
-      <div className='five-day-forecast'>{fiveDayDisplay()}</div>
+      <div className='toggle-title-container'>
+        <Toggle
+          left='°F'
+          right='°C'
+          checked={isCelsius}
+          onChange={handleTempChange}
+          className='toggle'
+        />
+        <h1 className='title'>Location</h1>
+      </div>
+      <div className='seven-day-forecast'>{ForecastDisplay()}</div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import DateClass from './DateClass';
+import SearchBar from './SearchBar';
 
 export default function Header() {
   const [currentTime, setCurrentTime] = useState(DateClass.currentTime());
@@ -18,17 +19,7 @@ export default function Header() {
       <header>
         <h1 className='app-title'>Weather App</h1>
         <h1 className='current-time'>{currentTime}</h1>
-        <div className='search-bar'>
-          <form>
-            <button className='search-button'>&#128269;</button>
-            <input
-              className='search-input'
-              type='text'
-              placeholder='City...'
-              name='search'
-            />
-          </form>
-        </div>
+        <SearchBar />
       </header>
       <hr />
     </div>

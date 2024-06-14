@@ -7,6 +7,10 @@ export default function ForecastWidget({ isCelsius, dayOfWeek, date, index }) {
   const [maxTemp, setMaxTemp] = useState();
   const [minTemp, setMinTemp] = useState();
   const indexOfList = useRef(index);
+  const [code, setCode] = useState(100);
+  const [icon, setIcon] = useState('');
+  const [iconAlt, setIconAlt] = useState('');
+  const url = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
   useEffect(() => {
     indexOfList.current = index;
@@ -16,25 +20,32 @@ export default function ForecastWidget({ isCelsius, dayOfWeek, date, index }) {
   useEffect(() => {
     if (!currentWeatherData) return;
 
-    if (indexOfList.current >= 5) {
+    if (indexOfList.current >= 7) {
       return; // If it's out of bounds, return early
     }
-    const weatherInList = currentWeatherData.list[indexOfList.current].main;
+    const weatherInList = currentWeatherData.list[indexOfList.current];
+    setCode(weatherInList.weather[0].id);
+    setIconAlt(weatherInList.weather[0].main);
+    setIcon(weatherInList.weather[0].icon);
 
     if (isCelsius) {
       setTempSign('C');
-      setCurrentWeather((weatherInList.temp - 273.15).toFixed(0));
-      setMaxTemp((weatherInList.temp_max - 273.15).toFixed(0));
-      setMinTemp((weatherInList.temp_min - 273.15).toFixed(0));
+      setCurrentWeather((weatherInList.main.temp - 273.15).toFixed(0));
+      setMaxTemp((weatherInList.main.temp_max - 273.15).toFixed(0));
+      setMinTemp((weatherInList.main.temp_min - 273.15).toFixed(0));
     } else {
       setTempSign('F');
       setCurrentWeather(
-        ((weatherInList.temp - 273.15) * (9 / 5) + 32).toFixed(0)
+        ((weatherInList.main.temp - 273.15) * (9 / 5) + 32).toFixed(0)
       );
-      setMaxTemp(((weatherInList.temp_max - 273.15) * (9 / 5) + 32).toFixed(0));
-      setMinTemp(((weatherInList.temp_min - 273.15) * (9 / 5) + 32).toFixed(0));
+      setMaxTemp(
+        ((weatherInList.main.temp_max - 273.15) * (9 / 5) + 32).toFixed(0)
+      );
+      setMinTemp(
+        ((weatherInList.main.temp_min - 273.15) * (9 / 5) + 32).toFixed(0)
+      );
     }
-  }, [isCelsius, currentWeatherData]);
+  }, [isCelsius, currentWeatherData, code]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,7 +80,7 @@ export default function ForecastWidget({ isCelsius, dayOfWeek, date, index }) {
             {minTemp}°{tempSign}/{maxTemp}°{tempSign}
           </h4>
         </div>
-        <p className='icon'>&#9925;</p>
+        <img src={url} alt={iconAlt} className='icon' />
       </div>
     </div>
   );

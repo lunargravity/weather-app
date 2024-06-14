@@ -37,7 +37,7 @@ export default class DateClass {
     return `${currentDayOfWeek}`;
   }
 
-  static fiveDays() {
+  static getDays() {
     const fiveDays = [];
     const today = this.getToday();
     const daysOfWeek = [
@@ -50,7 +50,7 @@ export default class DateClass {
       'Saturday',
     ];
 
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 0; i <= 7; i++) {
       const index = (today.getDay() + i) % 7;
       fiveDays.push(daysOfWeek[index]);
     }
@@ -58,8 +58,8 @@ export default class DateClass {
     return fiveDays;
   }
 
-  static fiveDates() {
-    const fiveDates = [];
+  static getDates() {
+    const Dates = [];
     const today = this.getToday();
     const formatter = new Intl.DateTimeFormat('en-US', {
       year: '2-digit',
@@ -67,11 +67,11 @@ export default class DateClass {
       day: '2-digit',
     });
 
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 0; i <= 7; i++) {
       const nextDate = new Date(today);
       nextDate.setDate(today.getDate() + i);
-      fiveDates.push(formatter.format(nextDate));
+      Dates.push(formatter.format(nextDate));
     }
-    return fiveDates;
+    return Dates;
   }
 }
