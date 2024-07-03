@@ -6,7 +6,11 @@ import DateClass from './components/DateClass';
 
 export default function App() {
     const [isCelsius, setIsCelsius] = useState(false);
-    const [location, setLocation] = useState('default location');
+    const [location, setLocation] = useState({
+        address: '',
+        latitude: '',
+        longitude: '',
+    });
     const days = DateClass.getDays();
     const dates = DateClass.getDates();
 
@@ -39,7 +43,7 @@ export default function App() {
                     onChange={handleTempChange}
                     className='toggle'
                 />
-                <h1 className='title'>{location}</h1>
+                <h1 className='title'>{location.address}</h1>
             </div>
             <div className='seven-day-forecast'>{ForecastDisplay()}</div>
         </div>

@@ -10,7 +10,7 @@ export default function SearchBar({ setLocation }) {
         try {
             const response = await fetch(url);
             const data = response.data.json();
-            console.log(data.results);
+            console.log(data);
         } catch (error) {
             console.error('Error fetching data: ', error);
             setLocation('Invalid location');
