@@ -3,14 +3,14 @@
 ///////////////////////////////////////////////////////*/
 
 html {
-  --color-apricot: #ffd8be;
-  --color-electric-indigo: #5233ff;
-  --color-ghost-white: #f8f7ff;
-  --color-oxford-blue: #050029;
-  --color-periwinkle: #b8b8ff;
-  --color-sandy-brown: #ffad5c;
+    --color-apricot: #ffd8be;
+    --color-electric-indigo: #5233ff;
+    --color-ghost-white: #f8f7ff;
+    --color-oxford-blue: #050029;
+    --color-periwinkle: #b8b8ff;
+    --color-sandy-brown: #ffad5c;
 
-  --font-family-main: 'Inter', Arial, Helvetica, sans-serif;
+    --font-family-main: 'Inter', Arial, Helvetica, sans-serif;
 }
 
 /*/ //////////////////////////////////////////////////////
@@ -18,10 +18,10 @@ html {
 ///////////////////////////////////////////////////////*/
 
 .main-dashboard {
-  border: 5px solid var(--color-oxford-blue);
-  height: 601px;
-  width: 962px;
-  vertical-align: middle;
+    border: 5px solid var(--color-oxford-blue);
+    height: 601px;
+    width: 962px;
+    vertical-align: middle;
 }
 
 /*/ //////////////////////////////////////////////////////
@@ -29,92 +29,92 @@ html {
 ///////////////////////////////////////////////////////*/
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* Align items vertically */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header form {
-  height: 40px;
+    height: 40px;
 }
 
 .header-container {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-container .app-title {
-  color: var(--color-oxford-blue);
-  font-family: var(--font-family-main);
-  font-size: 20px;
-  font-weight: 600;
-  height: 20px;
-  margin: 0 0 0 1em;
+    color: var(--color-oxford-blue);
+    font-family: var(--font-family-main);
+    font-size: 20px;
+    font-weight: 600;
+    height: 20px;
+    margin: 0 0 0 1em;
 }
 
 .header-container .current-time {
-  color: var(--color-electric-indigo);
-  font-family: var(--font-family-main);
-  font-size: 20px;
-  font-weight: 600;
-  height: 20px;
-  margin: 0;
+    color: var(--color-electric-indigo);
+    font-family: var(--font-family-main);
+    font-size: 20px;
+    font-weight: 600;
+    height: 20px;
+    margin: 0;
 }
 
 .expand-search {
-  display: flex;
-  position: relative;
-  margin: 0;
-  overflow: hidden;
+    display: flex;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
 }
 
 .expand-search i {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 8px 8px;
-  color: var(--color-electric-indigo);
-  cursor: pointer;
-  user-select: none;
-  transition: 0.24s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 8px 8px;
+    color: var(--color-electric-indigo);
+    cursor: pointer;
+    user-select: none;
+    transition: 0.24s;
 }
 .expand-search i:hover {
-  color: var(--color-oxford-blue);
+    color: var(--color-oxford-blue);
 }
 .expand-search input {
-  border: none;
-  background: var(--color-periwinkle);
-  font-size: 16px var(--font-family-main);
-  padding: 8px 12px;
-  background: none;
-  border-radius: 4px;
-  transition: 0.24s;
-  width: 0px;
-  padding: 8px 0px 8px 34px;
+    border: none;
+    background: var(--color-periwinkle);
+    font-size: 16px var(--font-family-main);
+    padding: 8px 12px;
+    background: none;
+    border-radius: 4px;
+    transition: 0.24s;
+    width: 0px;
+    padding: 8px 0px 8px 34px;
 }
 .expand-search input:focus {
-  border: 2px solid var(--color-periwinkle);
-  outline: none;
-  width: 200px;
+    border: 2px solid var(--color-periwinkle);
+    outline: none;
+    width: 200px;
 }
 .expand-search input:focus + i {
-  color: var(--color-electric-indigo);
-  pointer-events: none;
+    color: var(--color-electric-indigo);
+    pointer-events: none;
 }
 
 ::placeholder {
-  color: var(--color-periwinkle);
-  font-family: var(--font-family-main);
-  font-style: italic;
-  font-weight: 300;
+    color: var(--color-periwinkle);
+    font-family: var(--font-family-main);
+    font-style: italic;
+    font-weight: 300;
 }
 
 .header-container hr {
-  align-self: center;
-  border: none;
-  border-top: 2px solid var(--color-periwinkle);
-  margin: 10px 0 0 0;
-  width: 100%;
+    align-self: center;
+    border: none;
+    border-top: 2px solid var(--color-periwinkle);
+    margin: 10px 0 0 0;
+    width: 100%;
 }
 
 /*/ //////////////////////////////////////////////////////
@@ -123,62 +123,62 @@ header form {
 
 /* The box around slider */
 .toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 73px;
-  height: 40px;
-  margin: 1em;
+    position: relative;
+    display: inline-block;
+    width: 73px;
+    height: 40px;
+    margin: 1em;
 }
 
 /* Hides default HMTL checkbox*/
 .toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 /* The slider */
 .toggle-slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 8px;
-  background-color: var(--color-periwinkle);
-  transition: background-color 0.4s ease-in-out;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    background-color: var(--color-periwinkle);
+    transition: background-color 0.4s ease-in-out;
 }
 
 .toggle-slider:before {
-  position: absolute;
-  content: attr(data-content);
-  color: var(--color-ghost-white);
-  font-family: var(--font-family-main);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 32px;
-  height: 32px;
-  width: 32px;
-  left: 4px;
-  bottom: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-electric-indigo);
-  border-radius: 4px;
-  transition: transform 0.5s ease-in-out;
+    position: absolute;
+    content: attr(data-content);
+    color: var(--color-ghost-white);
+    font-family: var(--font-family-main);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    height: 32px;
+    width: 32px;
+    left: 4px;
+    bottom: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-electric-indigo);
+    border-radius: 4px;
+    transition: transform 0.5s ease-in-out;
 }
 
 input:checked + .toggle-slider {
-  background-color: var(--color-electric-indigo);
+    background-color: var(--color-electric-indigo);
 }
 
 input:checked + .toggle-slider:before {
-  transform: translateX(32px);
-  background-color: var(--color-periwinkle);
-  color: var(--color-oxford-blue);
-  content: attr(data-alt-content);
+    transform: translateX(32px);
+    background-color: var(--color-periwinkle);
+    color: var(--color-oxford-blue);
+    content: attr(data-alt-content);
 }
 
 /*/ //////////////////////////////////////////////////////
@@ -186,10 +186,10 @@ input:checked + .toggle-slider:before {
 ///////////////////////////////////////////////////////*/
 
 .toggle-title-container {
-  color: var(--color-electric-indigo);
-  display: flex;
-  flex-direction: row;
-  font-family: var(--font-family-main);
+    color: var(--color-electric-indigo);
+    display: flex;
+    flex-direction: row;
+    font-family: var(--font-family-main);
 }
 
 /*/ //////////////////////////////////////////////////////
@@ -197,11 +197,11 @@ input:checked + .toggle-slider:before {
 ///////////////////////////////////////////////////////*/
 
 .seven-day-forecast {
-  display: flex;
-  height: auto;
-  justify-content: space-evenly;
-  max-width: 100%;
-  overflow-x: scroll;
+    display: flex;
+    height: auto;
+    justify-content: space-evenly;
+    max-width: 100%;
+    overflow-x: scroll;
 }
 
 /*/ //////////////////////////////////////////////////////
@@ -209,66 +209,66 @@ input:checked + .toggle-slider:before {
 ///////////////////////////////////////////////////////*/
 
 .current-weather-widget {
-  background-color: var(--color-electric-indigo);
-  border-radius: 8px;
-  border: 2px solid var(--color-electric-indigo);
-  display: table;
-  font-family: var(--font-family-main);
-  height: auto;
-  line-height: 16px;
-  padding: 10px;
-  margin: 1em;
-  margin-top: 0;
-  max-width: 100%;
-  text-align: center;
+    background-color: var(--color-electric-indigo);
+    border-radius: 8px;
+    border: 2px solid var(--color-electric-indigo);
+    display: table;
+    font-family: var(--font-family-main);
+    height: auto;
+    line-height: 16px;
+    padding: 10px;
+    margin: 1em;
+    margin-top: 0;
+    max-width: 100%;
+    text-align: center;
 }
 
 .current-weather-widget .date-time {
-  color: var(--color-ghost-white);
-  display: table-row;
-  font-size: 14px;
+    color: var(--color-ghost-white);
+    display: table-row;
+    font-size: 14px;
 }
 
 .current-weather-widget .date {
-  display: table-cell;
+    display: table-cell;
 }
 
 .current-weather-widget .day {
-  display: table-cell;
+    display: table-cell;
 }
 
 .current-weather-widget .temp-and-icon {
-  display: table-row;
+    display: table-row;
 }
 
 .current-weather-widget .temp {
-  display: table-cell;
+    display: table-cell;
 }
 
 .current-weather-widget h1 {
-  color: var(--color-ghost-white);
-  font-weight: 800;
-  white-space: nowrap;
+    color: var(--color-ghost-white);
+    font-weight: 800;
+    white-space: nowrap;
 }
 
 .current-weather-widget h3 {
-  color: var(--color-ghost-white);
-  font-style: italic;
-  font-weight: 300;
+    color: var(--color-ghost-white);
+    font-style: italic;
+    font-weight: 300;
 }
 
 .current-weather-widget h4 {
-  color: var(--color-periwinkle);
-  font-size: 16px;
-  font-weight: 400;
-  padding-bottom: 0;
-  margin-bottom: 0;
+    color: var(--color-periwinkle);
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .current-weather-widget img {
-  display: table-cell;
-  padding-bottom: 0;
-  margin-bottom: 0;
+    display: table-cell;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 /*/ //////////////////////////////////////////////////////
@@ -277,127 +277,127 @@ input:checked + .toggle-slider:before {
 
 /* Inter Light */
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter/Inter-Light.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
 }
 
 /* Inter Light Italic */
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter/Inter-LightItalic.woff2') format('woff2');
-  font-weight: 300;
-  font-style: italic;
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
 }
 
 /* Inter Medium */
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter/Inter-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
 }
 
 /* Inter Medium Italic */
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter/Inter-MediumItalic.woff2') format('woff2');
-  font-weight: 500;
-  font-style: italic;
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
 }
 
 /* Inter Regular */
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter/Inter-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* Inter SemiBold */
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter/Inter-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
 }
 
 /* Inter SemiBold Italic */
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter/Inter-SemiBoldItalic.woff2') format('woff2');
-  font-weight: 600;
-  font-style: italic;
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-SemiBoldItalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
 }
 
 /* Inter Thin */
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter/Inter-Thin.woff2') format('woff2');
-  font-weight: 100;
-  font-style: normal;
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
 }
 
 /* Inter Thin Italic */
 @font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter/Inter-ThinItalic.woff2') format('woff2');
-  font-weight: 100;
-  font-style: italic;
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-ThinItalic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
 }
 @font-face {
-  font-family: 'Inter';
-  src: url('./fonts/Inter/Inter-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: url('./fonts/Inter/Inter-BoldItalic.woff2') format('woff2');
-  font-weight: bold;
-  font-style: italic;
+    font-family: 'Inter';
+    src: url('./fonts/Inter/Inter-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Inter Display';
-  src: url('./fonts/Inter/InterDisplay-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
+    font-family: 'Inter';
+    src: url('./fonts/Inter/Inter-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Inter Display';
-  src: url('./fonts/Inter/InterDisplay-BoldItalic.woff2') format('woff2');
-  font-weight: bold;
-  font-style: italic;
+    font-family: 'Inter Display';
+    src: url('./fonts/Inter/InterDisplay-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('./fonts/Inter/Inter-ExtraBold.woff2') format('woff2');
-  font-weight: 800;
-  font-style: normal;
+    font-family: 'Inter Display';
+    src: url('./fonts/Inter/InterDisplay-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('./fonts/Inter/Inter-ExtraBoldItalic.woff2') format('woff2');
-  font-weight: 800;
-  font-style: italic;
+    font-family: 'Inter';
+    src: url('./fonts/Inter/Inter-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Inter Display';
-  src: url('./fonts/Inter/InterDisplay-ExtraBold.woff2') format('woff2');
-  font-weight: 800;
-  font-style: normal;
+    font-family: 'Inter';
+    src: url('./fonts/Inter/Inter-ExtraBoldItalic.woff2') format('woff2');
+    font-weight: 800;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Inter Display';
-  src: url('./fonts/Inter/InterDisplay-ExtraBoldItalic.woff2') format('woff2');
-  font-weight: 800;
-  font-style: italic;
+    font-family: 'Inter Display';
+    src: url('./fonts/Inter/InterDisplay-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter Display';
+    src: url('./fonts/Inter/InterDisplay-ExtraBoldItalic.woff2') format('woff2');
+    font-weight: 800;
+    font-style: italic;
 }
