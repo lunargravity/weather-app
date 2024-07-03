@@ -10,6 +10,7 @@ export default function App() {
         address: 'Washington, District of Columbia, United States of America',
         latitude: '38.890259',
         longitude: '-77.019913',
+        timezone: 'America/New_York',
     });
     const days = DateClass.getDays();
     const dates = DateClass.getDates();
@@ -36,7 +37,10 @@ export default function App() {
 
     return (
         <div>
-            <Header setLocation={setLocation} />
+            <Header
+                setLocation={setLocation}
+                timezone={location.timezone}
+            />
             <div className='toggle-title-container'>
                 <Toggle
                     left='°F'

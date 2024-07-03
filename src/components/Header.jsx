@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import DateClass from './DateClass';
 import SearchBar from './SearchBar';
 
-export default function Header({ setLocation }) {
-    const [currentTime, setCurrentTime] = useState(DateClass.currentTime());
+export default function Header({ setLocation, timezone }) {
+    const [currentTime, setCurrentTime] = useState(DateClass.currentTime({ timezone }));
 
     useEffect(() => {
         const intervalId = setInterval(() => {
