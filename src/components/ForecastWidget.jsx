@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function ForecastWidget({ isCelsius, dayOfWeek, date, index }) {
+export default function ForecastWidget({ isCelsius, dayOfWeek, date, index, latitude, longitude }) {
     const [currentWeatherData, setWeatherData] = useState(null);
     const [tempSign, setTempSign] = useState('');
     const [currentWeather, setCurrentWeather] = useState();
@@ -42,8 +42,8 @@ export default function ForecastWidget({ isCelsius, dayOfWeek, date, index }) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const lat = 38.907192;
-            const lon = -77.036873;
+            const lat = latitude;
+            const lon = longitude;
             const key = 'e3f34b30d043965fb5b0cb0852e479ce';
             const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}`;
             const response = await fetch(url);
@@ -52,7 +52,7 @@ export default function ForecastWidget({ isCelsius, dayOfWeek, date, index }) {
             setWeatherData(data);
         };
         fetchData();
-    }, []);
+    }, [latitude, longitude]);
 
     if (!currentWeatherData) {
         return <p>Loading...</p>;

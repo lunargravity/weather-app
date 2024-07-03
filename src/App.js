@@ -7,9 +7,9 @@ import DateClass from './components/DateClass';
 export default function App() {
     const [isCelsius, setIsCelsius] = useState(false);
     const [location, setLocation] = useState({
-        address: '',
-        latitude: '',
-        longitude: '',
+        address: 'Washington, District of Columbia, United States of America',
+        latitude: '38.890259',
+        longitude: '-77.019913',
     });
     const days = DateClass.getDays();
     const dates = DateClass.getDates();
@@ -27,6 +27,8 @@ export default function App() {
                     dayOfWeek={day}
                     date={dates[index]}
                     index={index}
+                    latitude={location.latitude}
+                    longitude={location.longitude}
                 />
             );
         });

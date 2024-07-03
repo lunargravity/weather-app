@@ -9,11 +9,19 @@ export default function SearchBar({ setLocation }) {
         e.preventDefault();
         try {
             const response = await fetch(url);
-            const data = response.data.json();
-            console.log(data);
+            const data = await response.json();
+            if (data.results) {
+                setLocation({
+                    address: data.results[0].formatted,
+                    latitude: data.results[0].geometry.lat,
+                    longitude: data.results[0].geometry.lng,
+                });
+            } else {
+                setLocation('Invalid location');
+            }
         } catch (error) {
             console.error('Error fetching data: ', error);
-            setLocation('Invalid location');
+            setLocation('Fetching error');
         }
     };
 
