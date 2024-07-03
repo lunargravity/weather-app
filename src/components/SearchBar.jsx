@@ -1,11 +1,20 @@
 import { useState } from 'react';
 
 export default function SearchBar({ setLocation }) {
-    const [searchedLocation, setSearchedLocation] = useState('');
+    const [query, setQuery] = useState('');
+    const key = '3287679688d14c97ad8392d7fa3e2af3';
+    const url = `https://api.opencagedata.com/geocode/v1/json?q=${query}&key=${key}`;
 
-    const onSearch = (e) => {
+    const onSearch = async (e) => {
         e.preventDefault();
-        setLocation(searchedLocation);
+        try {
+            const response = await fetch(url);
+            const data = response.data.json();
+            console.log(data.results);
+        } catch (error) {
+            console.error('Error fetching data: ', error);
+            setLocation('Invalid location');
+        }
     };
 
     return (
@@ -13,10 +22,10 @@ export default function SearchBar({ setLocation }) {
             <label className='expand-search'>
                 <input
                     type='text'
-                    placeholder='City...'
+                    placeholder='City, Country Code...'
                     name='search'
-                    value={searchedLocation}
-                    onChange={(e) => setSearchedLocation(e.target.value)}
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
                 />
                 <i className='material-icons'>search</i>
             </label>
