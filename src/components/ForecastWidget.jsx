@@ -65,6 +65,11 @@ export default function ForecastWidget({ isCelsius, dayOfWeek, date, index, lati
                 <h3 className='date'>{date}</h3>
             </div>
             <div className='temp-and-icon'>
+                <img
+                    src={url}
+                    alt={iconAlt}
+                    className='icon'
+                />
                 <div className='temp'>
                     <h1>
                         {currentWeather}°{tempSign}
@@ -73,11 +78,6 @@ export default function ForecastWidget({ isCelsius, dayOfWeek, date, index, lati
                         {minTemp}°{tempSign}/{maxTemp}°{tempSign}
                     </h4>
                 </div>
-                <img
-                    src={url}
-                    alt={iconAlt}
-                    className='icon'
-                />
             </div>
         </div>
     );

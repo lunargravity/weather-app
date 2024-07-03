@@ -24,6 +24,23 @@ html {
     vertical-align: middle;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--color-ghost-white);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--color-periwinkle);
+    border-radius: 4px;
+}
+
 /*/ //////////////////////////////////////////////////////
 ////////////////////////HEADER//////////////////////////
 ///////////////////////////////////////////////////////*/
@@ -199,9 +216,9 @@ input:checked + .toggle-slider:before {
 .seven-day-forecast {
     display: flex;
     height: auto;
-    justify-content: space-evenly;
+    justify-content: space-between;
     max-width: 100%;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 /*/ //////////////////////////////////////////////////////
@@ -209,10 +226,13 @@ input:checked + .toggle-slider:before {
 ///////////////////////////////////////////////////////*/
 
 .current-weather-widget {
-    background-color: var(--color-electric-indigo);
+    background-color: var(--color-ghost-white);
     border-radius: 8px;
     border: 2px solid var(--color-electric-indigo);
-    display: table;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-family: var(--font-family-main);
     height: auto;
     line-height: 16px;
@@ -224,41 +244,33 @@ input:checked + .toggle-slider:before {
 }
 
 .current-weather-widget .date-time {
-    color: var(--color-ghost-white);
-    display: table-row;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 14px;
 }
 
-.current-weather-widget .date {
-    display: table-cell;
-}
-
-.current-weather-widget .day {
-    display: table-cell;
-}
-
-.current-weather-widget .temp-and-icon {
-    display: table-row;
-}
-
+.current-weather-widget .date,
+.current-weather-widget .day,
+.current-weather-widget .temp-and-icon,
 .current-weather-widget .temp {
-    display: table-cell;
+    margin: 5px 0;
 }
 
 .current-weather-widget h1 {
-    color: var(--color-ghost-white);
+    color: var(--color-electric-indigo);
     font-weight: 800;
     white-space: nowrap;
 }
 
 .current-weather-widget h3 {
-    color: var(--color-ghost-white);
-    font-style: italic;
-    font-weight: 300;
+    color: var(--color-electric-indigo);
+    font-weight: 600;
+    text-align: center;
 }
 
 .current-weather-widget h4 {
-    color: var(--color-periwinkle);
+    color: var(--color-electric-indigo);
     font-size: 16px;
     font-weight: 400;
     padding-bottom: 0;
@@ -266,9 +278,9 @@ input:checked + .toggle-slider:before {
 }
 
 .current-weather-widget img {
-    display: table-cell;
-    padding-bottom: 0;
-    margin-bottom: 0;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(var(--color-electric-indigo) 0rem 0rem 30px);
 }
 
 /*/ //////////////////////////////////////////////////////
