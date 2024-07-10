@@ -10,6 +10,8 @@ html {
     --color-periwinkle: #b8b8ff;
     --color-sandy-brown: #ffad5c;
 
+    --color-modal-backdrop: rgb(184, 184, 255, 0.5);
+
     --font-family-main: 'Inter', Arial, Helvetica, sans-serif;
 }
 
@@ -281,6 +283,92 @@ input:checked + .toggle-slider:before {
     display: block;
     margin: 0 auto;
     filter: drop-shadow(var(--color-electric-indigo) 0rem 0rem 30px);
+}
+
+/*/ //////////////////////////////////////////////////////
+////////////////////WEATHER DETAILS//////////////////////
+///////////////////////////////////////////////////////*/
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-modal-backdrop);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+}
+
+.weather-details-container {
+    position: absolute;
+    display: flex;
+    border: 2px solid var(--color-electric-indigo);
+    border-radius: 8px;
+    background-color: var(--color-ghost-white);
+    color: var(--color-electric-indigo);
+    margin-top: 1em;
+    margin-left: 1em;
+    left: 50%;
+    top: 50%;
+    width: fit-content;
+    transform: translate(-50%, -50%);
+}
+
+.weather-details-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: var(--font-family-main);
+}
+
+.weather-details-content .closeButton {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.weather-details-content .weather-details {
+    margin: 0 2em 2em 2em;
+}
+
+.weather-details .temp-header {
+    margin-bottom: 3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather-details .min-max {
+    margin: 1em;
+    text-align: right;
+}
+
+.min-max h3 {
+    margin: 0;
+}
+
+.weather-details .circle {
+    min-width: 100px;
+    height: 100px;
+    background-color: var(--color-periwinkle);
+    filter: drop-shadow(var(--color-electric-indigo) 0rem 0rem 30px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-details-content button {
+    background-color: transparent;
+    border: none;
+    color: var(--color-periwinkle);
+    height: fit-content;
+    width: fit-content;
+    font-size: 1.5em;
+    margin: 1em 1em 0 1em;
+}
+
+.weather-details-content button:hover {
+    color: var(--color-electric-indigo);
 }
 
 /*/ //////////////////////////////////////////////////////

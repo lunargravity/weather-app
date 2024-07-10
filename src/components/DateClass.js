@@ -1,5 +1,3 @@
-import { DateTime } from 'luxon';
-
 export default class DateClass {
     static getToday() {
         return new Date();
@@ -15,12 +13,11 @@ export default class DateClass {
 
     static currentTime({ timezone }) {
         const today = this.getToday();
-        const hours = today.getHours();
-        const minutes = today.getMinutes();
-        const ampm = hours >= 12 ? 'PM' : 'AM';
-        const formattedHours = hours % 12 || 12;
-        const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-        return `${formattedHours}:${formattedMinutes} ${ampm}`;
+        return today.toLocaleString('en-US', {
+            timeZone: timezone,
+            hour12: true,
+            timeZoneName: 'short',
+        });
     }
 
     static dayOfWeek() {

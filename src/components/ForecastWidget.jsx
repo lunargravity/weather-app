@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function ForecastWidget({ isCelsius, dayOfWeek, date, index, latitude, longitude }) {
+export default function ForecastWidget({ isCelsius, dayOfWeek, date, index, latitude, longitude, handleDetails }) {
     const [currentWeatherData, setWeatherData] = useState(null);
     const [tempSign, setTempSign] = useState('');
     const [currentWeather, setCurrentWeather] = useState();
@@ -59,7 +59,9 @@ export default function ForecastWidget({ isCelsius, dayOfWeek, date, index, lati
     }
 
     return (
-        <div className='current-weather-widget'>
+        <div
+            className='current-weather-widget'
+            onClick={() => handleDetails(currentWeatherData, indexOfList.current)}>
             <div className='date-time'>
                 <h3 className='day'>{dayOfWeek}</h3>
                 <h3 className='date'>{date}</h3>

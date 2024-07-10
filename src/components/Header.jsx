@@ -7,12 +7,12 @@ export default function Header({ setLocation, timezone }) {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            const newTime = DateClass.currentTime();
+            const newTime = DateClass.currentTime({ timezone });
             setCurrentTime(newTime);
         }, 1000);
 
         return () => clearInterval(intervalId);
-    }, []);
+    }, [timezone]);
 
     return (
         <div className='header-container'>

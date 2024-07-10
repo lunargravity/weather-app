@@ -15,6 +15,7 @@ export default function SearchBar({ setLocation }) {
                     address: data.results[0].formatted,
                     latitude: data.results[0].geometry.lat,
                     longitude: data.results[0].geometry.lng,
+                    timezone: data.results[0].annotations.timezone.name,
                 });
             } else {
                 setLocation('Invalid location');

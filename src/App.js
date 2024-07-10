@@ -3,6 +3,7 @@ import ForecastWidget from './components/ForecastWidget';
 import Header from './components/Header';
 import Toggle from './components/Toggle';
 import DateClass from './components/DateClass';
+import WeatherDetails from './components/WeatherDetails';
 
 export default function App() {
     const [isCelsius, setIsCelsius] = useState(false);
@@ -12,11 +13,18 @@ export default function App() {
         longitude: '-77.019913',
         timezone: 'America/New_York',
     });
+    const [showModal, setShowModal] = useState(false);
+    const [details, setDetails] = useState(null);
     const days = DateClass.getDays();
     const dates = DateClass.getDates();
 
     const handleTempChange = () => {
         setIsCelsius(!isCelsius);
+    };
+
+    const handleDetails = (data, index) => {
+        setShowModal(true);
+        setDetails(data.list[index]);
     };
 
     const ForecastDisplay = () => {
@@ -30,6 +38,7 @@ export default function App() {
                     index={index}
                     latitude={location.latitude}
                     longitude={location.longitude}
+                    handleDetails={handleDetails}
                 />
             );
         });
@@ -52,6 +61,13 @@ export default function App() {
                 <h1 className='title'>{location.address}</h1>
             </div>
             <div className='seven-day-forecast'>{ForecastDisplay()}</div>
+            {showModal && (
+                <WeatherDetails
+                    setShowModal={setShowModal}
+                    isCelsius={isCelsius}
+                    details={details}
+                />
+            )}
         </div>
     );
 }
