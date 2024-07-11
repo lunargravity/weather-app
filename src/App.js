@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Toggle from './components/Toggle';
 import DateClass from './components/DateClass';
 import WeatherDetails from './components/WeatherDetails';
+import Sidebar from './components/Sidebar';
 
 export default function App() {
     const [isCelsius, setIsCelsius] = useState(false);
@@ -17,6 +18,7 @@ export default function App() {
     const [details, setDetails] = useState(null);
     const days = DateClass.getDays();
     const dates = DateClass.getDates();
+    const [showSidebar, setShowSidebar] = useState(false);
 
     const handleTempChange = () => {
         setIsCelsius(!isCelsius);
@@ -49,6 +51,8 @@ export default function App() {
             <Header
                 setLocation={setLocation}
                 timezone={location.timezone}
+                showSidebar={showSidebar}
+                setShowSidebar={setShowSidebar}
             />
             <div className='toggle-title-container'>
                 <Toggle
@@ -69,6 +73,7 @@ export default function App() {
                     timezone={location.timezone}
                 />
             )}
+            {showSidebar && <Sidebar />}
         </div>
     );
 }
