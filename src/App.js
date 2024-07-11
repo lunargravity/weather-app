@@ -66,6 +66,7 @@ export default function App() {
                     setShowModal={setShowModal}
                     isCelsius={isCelsius}
                     details={details}
+                    timezone={location.timezone}
                 />
             )}
         </div>

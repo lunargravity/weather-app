@@ -371,6 +371,15 @@ input:checked + .toggle-slider:before {
     color: var(--color-electric-indigo);
 }
 
+.additional-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.additional-info p {
+    margin: 0;
+}
+
 /*/ //////////////////////////////////////////////////////
 ////////////////////FONT FACE RULES//////////////////////
 ///////////////////////////////////////////////////////*/

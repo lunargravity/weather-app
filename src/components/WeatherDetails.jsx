@@ -1,4 +1,4 @@
-export default function WeatherDetails({ setShowModal, isCelsius, details }) {
+export default function WeatherDetails({ setShowModal, isCelsius, details, timezone }) {
     const feelsLike = isCelsius
         ? `${(details.main.feels_like - 273.15).toFixed(0)} °C`
         : `${((details.main.feels_like - 273.15) * (9 / 5) + 32).toFixed(0)} °F`;
@@ -13,15 +13,10 @@ export default function WeatherDetails({ setShowModal, isCelsius, details }) {
     const min = isCelsius
         ? `${(details.main.temp_min - 273.15).toFixed(0)} °C`
         : `${((details.main.temp_min - 273.15) * (9 / 5) + 32).toFixed(0)} °F`;
-    const humidity = 0; // percentage
-    const windSpeed = 0; // meter/sec
-    const windDeg = 0; // degrees
-    const windGust = 0; // meter/sec
-    const clouds = 0; // percentage
-    const rain = 0; // rain volume in mm over last hour
-    const snow = 0; // snow volume in mm over last hour
-    const sunrise = 0; // time in UTC
-    const sunset = 0; // time in UTC
+    const humidity = `${details.main.humidity}%`;
+    const windDeg = `${details.wind.deg}°`;
+    const windGust = `${details.wind.gust} m/s`;
+    const clouds = `${details.clouds.all}%`;
 
     return (
         <div className='modal-backdrop'>
@@ -41,12 +36,24 @@ export default function WeatherDetails({ setShowModal, isCelsius, details }) {
                             </div>
                         </div>
                         <div className='additional-info'>
-                            <p></p>
-                            <p>
-                                <em>
-                                    feels like... {feelsLike} with {description}.
-                                </em>
-                            </p>
+                            <div>
+                                <p>
+                                    Clouds: {clouds} | Humidity: {humidity}
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <strong>Wind</strong> Gust: {windGust} | Degree: {windDeg}
+                                </p>
+                            </div>
+                            <hr />
+                            <div>
+                                <p>
+                                    <em>
+                                        feels like... {feelsLike} with {description}.
+                                    </em>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
