@@ -81,17 +81,36 @@ header form {
 
 /* Rotate first bar */
 .bar1-change {
+  background-color: var(--color-ghost-white);
   transform: translate(0, 8px) rotate(-45deg);
 }
 
 /* Fade out the second bar */
 .bar2-change {
+  background-color: var(--color-ghost-white);
   opacity: 0;
 }
 
 /* Rotate last bar */
 .bar3-change {
+  background-color: var(--color-ghost-white);
   transform: translate(0, -8px) rotate(45deg);
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+  z-index: 1000;
+}
+
+.favorites-title {
+  font-family: var(--font-family-main);
+  font-size: 25px;
+  font-weight: 600;
+  height: 25px;
+  color: var(--color-ghost-white);
 }
 
 .header-container .app-title {
@@ -179,14 +198,36 @@ header form {
   background-color: var(--color-electric-indigo);
   color: var(--color-ghost-white);
   z-index: 500;
+  width: 45%;
+  height: 100%;
 }
 
 .favorite-cities {
   display: flex;
+  margin-top: 50%;
+  font-family: var(--font-family-main);
+  font-size: 20px;
+  font-weight: 600;
+  height: 20px;
+}
+
+.favorite-cities ul {
+  margin: 0;
+}
+
+.favorite-cities li {
+  margin: 0;
+  margin-top: 30px;
+  list-style: none;
 }
 
 .other-pages {
   display: flex;
+  margin-bottom: 30%;
+  font-family: var(--font-family-main);
+  font-size: 20px;
+  font-weight: 600;
+  height: 20px;
 }
 
 /*/ //////////////////////////////////////////////////////
