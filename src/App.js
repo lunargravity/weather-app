@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ForecastWidget from './components/ForecastWidget';
 import Header from './components/Header';
 import Toggle from './components/Toggle';
@@ -19,6 +19,23 @@ export default function App() {
   const days = DateClass.getDays();
   const dates = DateClass.getDates();
   const [showSidebar, setShowSidebar] = useState(false);
+  const [favoriteCities, setFavoriteCities] = useState([
+    {
+      address: 'Ulaanbaatar, Mongolia',
+      latitude: '47.9184676',
+      longitude: '106.9177016',
+      timezone: 'Asia/Ulaanbaatar',
+    },
+  ]);
+  const [isLiked, setIsLiked] = useState(false);
+
+  useEffect(() => {
+    if (favoriteCities.find((city) => city.address === location.address) !== undefined) {
+      setIsLiked(true);
+    } else {
+      setIsLiked(false);
+    }
+  }, [location]);
 
   const handleTempChange = () => {
     setIsCelsius(!isCelsius);
@@ -27,6 +44,16 @@ export default function App() {
   const handleDetails = (data, index) => {
     setShowModal(true);
     setDetails(data.list[index]);
+  };
+
+  const handleLike = () => {
+    if (isLiked) {
+      const index = favoriteCities.indexOf(location);
+      delete favoriteCities[index];
+    } else {
+      favoriteCities.push(location);
+    }
+    setIsLiked(!isLiked);
   };
 
   const ForecastDisplay = () => {
@@ -48,7 +75,14 @@ export default function App() {
 
   return (
     <div>
-      {showSidebar && <Sidebar />}
+      {showSidebar && (
+        <Sidebar
+          favoriteCities={favoriteCities}
+          setFavoriteCities={setFavoriteCities}
+          setLocation={setLocation}
+          setShowSidebar={setShowSidebar}
+        />
+      )}
       <Header
         setLocation={setLocation}
         timezone={location.timezone}
@@ -63,7 +97,16 @@ export default function App() {
           onChange={handleTempChange}
           className='toggle'
         />
-        <h1 className='title'>{location.address}</h1>
+        <h1 className='title'>
+          <div>{location.address}</div>
+          <i
+            className={isLiked ? 'fa fa-heart' : 'fa fa-heart-o'}
+            aria-hidden='true'
+            onClick={(e) => {
+              handleLike(e);
+            }}
+          ></i>
+        </h1>
       </div>
       <div className='seven-day-forecast'>{ForecastDisplay()}</div>
       {showModal && (

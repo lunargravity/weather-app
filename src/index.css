@@ -205,6 +205,8 @@ header form {
 .favorite-cities {
   display: flex;
   margin-top: 50%;
+  margin-left: 1em;
+  margin-right: 1em;
   font-family: var(--font-family-main);
   font-size: 20px;
   font-weight: 600;
@@ -213,12 +215,30 @@ header form {
 
 .favorite-cities ul {
   margin: 0;
+  padding: 0;
 }
 
 .favorite-cities li {
   margin: 0;
   margin-top: 30px;
   list-style: none;
+  cursor: pointer;
+}
+
+.favorite-city {
+  display: flex;
+}
+
+.fa-heart-o {
+  color: red;
+  cursor: pointer;
+  margin-left: 1em;
+}
+
+.fa-heart {
+  color: red;
+  cursor: pointer;
+  margin-left: 1em;
 }
 
 .other-pages {
@@ -228,6 +248,7 @@ header form {
   font-size: 20px;
   font-weight: 600;
   height: 20px;
+  margin-left: 1em;
 }
 
 /*/ //////////////////////////////////////////////////////
@@ -303,6 +324,10 @@ input:checked + .toggle-slider:before {
   display: flex;
   flex-direction: row;
   font-family: var(--font-family-main);
+}
+
+.toggle-title-container .title {
+  display: flex;
 }
 
 /*/ //////////////////////////////////////////////////////
