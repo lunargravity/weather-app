@@ -5,6 +5,7 @@ import Toggle from './components/Toggle';
 import DateClass from './components/DateClass';
 import WeatherDetails from './components/WeatherDetails';
 import Sidebar from './components/Sidebar';
+import Events from './components/Events';
 
 export default function App() {
   const [isCelsius, setIsCelsius] = useState(false);
@@ -35,7 +36,7 @@ export default function App() {
     } else {
       setIsLiked(false);
     }
-  }, [location]);
+  }, [location, favoriteCities]);
 
   const handleTempChange = () => {
     setIsCelsius(!isCelsius);
@@ -75,48 +76,53 @@ export default function App() {
 
   return (
     <div>
-      {showSidebar && (
-        <Sidebar
-          favoriteCities={favoriteCities}
-          setFavoriteCities={setFavoriteCities}
+      <div>
+        {showSidebar && (
+          <Sidebar
+            favoriteCities={favoriteCities}
+            setFavoriteCities={setFavoriteCities}
+            setLocation={setLocation}
+            setShowSidebar={setShowSidebar}
+          />
+        )}
+        <Header
           setLocation={setLocation}
+          timezone={location.timezone}
+          showSidebar={showSidebar}
           setShowSidebar={setShowSidebar}
         />
-      )}
-      <Header
-        setLocation={setLocation}
-        timezone={location.timezone}
-        showSidebar={showSidebar}
-        setShowSidebar={setShowSidebar}
-      />
-      <div className='toggle-title-container'>
-        <Toggle
-          left='°F'
-          right='°C'
-          checked={isCelsius}
-          onChange={handleTempChange}
-          className='toggle'
-        />
-        <h1 className='title'>
-          <div>{location.address}</div>
-          <i
-            className={isLiked ? 'fa fa-heart' : 'fa fa-heart-o'}
-            aria-hidden='true'
-            onClick={(e) => {
-              handleLike(e);
-            }}
-          ></i>
-        </h1>
+        <div className='toggle-title-container'>
+          <Toggle
+            left='°F'
+            right='°C'
+            checked={isCelsius}
+            onChange={handleTempChange}
+            className='toggle'
+          />
+          <h1 className='title'>
+            <div>{location.address}</div>
+            <i
+              className={isLiked ? 'fa fa-heart' : 'fa fa-heart-o'}
+              aria-hidden='true'
+              onClick={(e) => {
+                handleLike(e);
+              }}
+            ></i>
+          </h1>
+        </div>
+        <div className='seven-day-forecast'>{ForecastDisplay()}</div>
+        {showModal && (
+          <WeatherDetails
+            setShowModal={setShowModal}
+            isCelsius={isCelsius}
+            details={details}
+            timezone={location.timezone}
+          />
+        )}
       </div>
-      <div className='seven-day-forecast'>{ForecastDisplay()}</div>
-      {showModal && (
-        <WeatherDetails
-          setShowModal={setShowModal}
-          isCelsius={isCelsius}
-          details={details}
-          timezone={location.timezone}
-        />
-      )}
+      <div>
+        <Events location={location} />
+      </div>
     </div>
   );
 }
