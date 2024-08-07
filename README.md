@@ -32,3 +32,8 @@ Open your browser and navigate to `http://localhost:3000`
 - Display local time
 - Events in the area using Ticketmaster
 - Favorite cities storage
+
+## API Troubleshooting
+
+- If you do not write the city name correctly, it will not be able to find the location.
+- There is a limit to how many requests can be made.
