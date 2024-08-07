@@ -48,7 +48,7 @@ export default function Sidebar({
     <div className='modal-backdrop'>
       <div className='sidebar-container'>
         <div className='favorite-cities'>
-          <h2 className='favorites-title'>Favorites:</h2>
+          <h2 className='favorites-title'>Favorite Cities:</h2>
           <ul>
             {currentFavCities.map((city) => {
               return (

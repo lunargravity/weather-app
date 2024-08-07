@@ -27,6 +27,36 @@ export default function App() {
       longitude: '106.9177016',
       timezone: 'Asia/Ulaanbaatar',
     },
+    {
+      address: 'New York, New York, United States of America',
+      latitude: 40.7127281,
+      longitude: -74.0060152,
+      timezone: 'America/New_York',
+    },
+    {
+      address: 'London, United Kingdom',
+      latitude: 51.4893335,
+      longitude: -0.1440551,
+      timezone: 'Europe/London',
+    },
+    {
+      address: 'Tokyo, Japan',
+      latitude: 35.6821936,
+      longitude: 139.762221,
+      timezone: 'Asia/Tokyo',
+    },
+    {
+      address: 'Paris, France',
+      latitude: 48.8534951,
+      longitude: 2.3483915,
+      timezone: 'Europe/Paris',
+    },
+    {
+      address: 'Sydney, New South Wales, Australia',
+      latitude: -33.8698439,
+      longitude: 151.2082848,
+      timezone: 'Australia/Sydney',
+    },
   ]);
   const [isLiked, setIsLiked] = useState(false);
 
