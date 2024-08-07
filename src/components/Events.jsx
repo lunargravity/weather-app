@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import EventWidget from './EventWidget';
 
 export default function Events({ location }) {
   const [events, setEvents] = useState(null);
@@ -13,7 +14,15 @@ export default function Events({ location }) {
         const response = await fetch(url);
         const data = await response.json();
         setShowError(false);
-        setEvents(data._embedded.events);
+
+        const eventsList = data._embedded.events;
+        eventsList.sort((a, b) => {
+          const dateA = new Date(a.dates.start.dateTime);
+          const dateB = new Date(b.dates.start.dateTime);
+          return dateA - dateB;
+        });
+
+        setEvents(eventsList);
       } catch (e) {
         setShowError(true);
       }
@@ -35,12 +44,7 @@ export default function Events({ location }) {
           {events && (
             <div className='all-event-cards'>
               {events.map((event) => {
-                console.log(event);
-                return (
-                  <div className='event-card'>
-                    <a href={event.url}>{`${event.name}`}</a>
-                  </div>
-                );
+                return <EventWidget event={event} />;
               })}
             </div>
           )}

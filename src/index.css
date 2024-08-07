@@ -521,11 +521,50 @@ input:checked + .toggle-slider:before {
   height: 20px;
 }
 
+.all-event-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
 .event-card {
+  flex: 1 1 calc(10% - 1em);
+  box-sizing: border-box;
   border: 2px solid var(--color-electric-indigo);
   border-radius: 8px;
   padding: 1em;
   margin: 1em;
+}
+
+.event-card h4 {
+  font-family: var(--font-family-main);
+  color: var(--color-electric-indigo);
+}
+
+.event-card p {
+  font-family: var(--font-family-main);
+  font-size: 14px;
+  color: var(--color-electric-indigo);
+  margin: 0;
+}
+
+.event-image {
+  width: 100%;
+}
+
+.tickets-button {
+  background-color: var(--color-periwinkle);
+  border-radius: 8px;
+  color: white;
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: var(--font-family-main);
+  font-weight: 500;
+  margin-top: 1em;
+  cursor: pointer;
 }
 
 /*/ //////////////////////////////////////////////////////
