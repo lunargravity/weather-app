@@ -2,7 +2,6 @@ import React from 'react';
 import DateClass from './DateClass';
 
 export default function EventWidget({ event }) {
-  console.log(event);
   return (
     <div className='event-card'>
       <h4>{event.name}</h4>

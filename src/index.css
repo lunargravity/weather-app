@@ -198,19 +198,20 @@ header form {
   background-color: var(--color-electric-indigo);
   color: var(--color-ghost-white);
   z-index: 500;
-  width: 45%;
+  width: fit-content;
   height: 100%;
 }
 
 .favorite-cities {
   display: flex;
-  margin-top: 50%;
+  flex-direction: column;
+  margin-top: 60px;
   margin-left: 1em;
   margin-right: 1em;
   font-family: var(--font-family-main);
   font-size: 20px;
   font-weight: 600;
-  height: 20px;
+  height: auto;
 }
 
 .favorite-cities ul {

@@ -21,7 +21,6 @@ export default function SearchBar({ setLocation }) {
         setLocation('Invalid location');
       }
     } catch (error) {
-      console.error('Error fetching data: ', error);
       setLocation('Fetching error');
     }
   };

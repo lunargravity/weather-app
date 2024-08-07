@@ -43,8 +43,8 @@ export default function Events({ location }) {
           </div>
           {events && (
             <div className='all-event-cards'>
-              {events.map((event) => {
-                return <EventWidget event={event} />;
+              {events.map((event, index) => {
+                return <EventWidget key={index} event={event} />;
               })}
             </div>
           )}

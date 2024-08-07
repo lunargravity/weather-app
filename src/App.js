@@ -31,7 +31,10 @@ export default function App() {
   const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
-    if (favoriteCities.find((city) => city.address === location.address) !== undefined) {
+    if (
+      favoriteCities.find((city) => city.address === location.address) !==
+      undefined
+    ) {
       setIsLiked(true);
     } else {
       setIsLiked(false);
@@ -52,6 +55,7 @@ export default function App() {
       const index = favoriteCities.indexOf(location);
       delete favoriteCities[index];
     } else {
+      console.log(location);
       favoriteCities.push(location);
     }
     setIsLiked(!isLiked);
@@ -106,8 +110,7 @@ export default function App() {
               aria-hidden='true'
               onClick={(e) => {
                 handleLike(e);
-              }}
-            ></i>
+              }}></i>
           </h1>
         </div>
         <div className='seven-day-forecast'>{ForecastDisplay()}</div>

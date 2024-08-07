@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
 
-export default function Sidebar({ favoriteCities, setFavoriteCities, setLocation, setShowSidebar }) {
+export default function Sidebar({
+  favoriteCities,
+  setFavoriteCities,
+  setLocation,
+  setShowSidebar,
+}) {
   const [currentFavCities, setCurrentFavCities] = useState(favoriteCities);
   const key = '3287679688d14c97ad8392d7fa3e2af3';
 
@@ -12,7 +17,9 @@ export default function Sidebar({ favoriteCities, setFavoriteCities, setLocation
   const onSearch = async (e, address) => {
     e.preventDefault();
     try {
-      const response = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${address}&key=${key}`);
+      const response = await fetch(
+        `https://api.opencagedata.com/geocode/v1/json?q=${address}&key=${key}`
+      );
       const data = await response.json();
       if (data.results) {
         setLocation({
@@ -27,7 +34,6 @@ export default function Sidebar({ favoriteCities, setFavoriteCities, setLocation
         setShowSidebar(false);
       }
     } catch (error) {
-      console.error('Error fetching data: ', error);
       setLocation('Fetching error');
       setShowSidebar(false);
     }
@@ -42,14 +48,16 @@ export default function Sidebar({ favoriteCities, setFavoriteCities, setLocation
     <div className='modal-backdrop'>
       <div className='sidebar-container'>
         <div className='favorite-cities'>
+          <h2 className='favorites-title'>Favorites:</h2>
           <ul>
             {currentFavCities.map((city) => {
               return (
                 <li
                   key={`${city.latitude}${city.longitude}`}
-                  className='favorite-city'
-                >
-                  <div onClick={(e) => onSearch(e, city.address)}>{city.address}</div>
+                  className='favorite-city'>
+                  <div onClick={(e) => onSearch(e, city.address)}>
+                    {city.address}
+                  </div>
                   <i
                     className='fa fa-heart'
                     aria-hidden='true'
