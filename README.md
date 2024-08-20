@@ -7,6 +7,12 @@ This is a basic weather web application that shows you the weather for the curre
 ## Features
 
 ![global search bar](public/images/global%20city%20search%20bar.png)
+![local time display](public/images/local%20time%20display.png)
+![seven day weather forecast](public/images/seven-day%20weather%20forecast.png)
+![weather details widget](public/images/weather%20details%20widget.png)
+![dual temperature toggle](public/images/dual%20temperature%20toggle.png)
+![area events via ticketmaster](public/images/area%20events%20via%20ticketmaster.png)
+![favorite cities storage](public/images/favorite%20cities%20storage.png)
 
 ## Deployment
 
