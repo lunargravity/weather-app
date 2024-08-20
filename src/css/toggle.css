@@ -1,0 +1,102 @@
+/*/ //////////////////////////////////////////////////////
+////////////////////TITLE CONTAINER//////////////////////
+///////////////////////////////////////////////////////*/
+
+.toggle-title-container {
+  color: var(--color-electric-indigo);
+  display: flex;
+  flex-direction: row;
+  font-family: var(--font-family-main);
+}
+
+.toggle-title-container .title {
+  display: flex;
+}
+
+@media (min-width: 300px) {
+  .toggle-title-container .title {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 400px) {
+  .toggle-title-container .title {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 600px) {
+  .toggle-title-container .title {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  .toggle-title-container .title {
+    font-size: 25px;
+  }
+}
+
+/*/ //////////////////////////////////////////////////////
+//////////////////////TOGGLE CSS/////////////////////////
+///////////////////////////////////////////////////////*/
+
+/* The box around slider */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 73px;
+  height: 40px;
+  margin: 1em;
+}
+
+/* Hides default HMTL checkbox*/
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background-color: var(--color-periwinkle);
+  transition: background-color 0.4s ease-in-out;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: attr(data-content);
+  color: var(--color-ghost-white);
+  font-family: var(--font-family-main);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  height: 32px;
+  width: 32px;
+  left: 4px;
+  bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-electric-indigo);
+  border-radius: 4px;
+  transition: transform 0.5s ease-in-out;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--color-electric-indigo);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(32px);
+  background-color: var(--color-periwinkle);
+  color: var(--color-oxford-blue);
+  content: attr(data-alt-content);
+}
