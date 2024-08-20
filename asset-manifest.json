@@ -1,35 +1,18 @@
 {
   "files": {
-    "main.css": "/weather-app/static/css/main.f0363ebc.css",
-    "main.js": "/weather-app/static/js/main.fea0b88a.js",
+    "main.css": "/weather-app/static/css/main.3c987ebb.css",
+    "main.js": "/weather-app/static/js/main.f5b887a3.js",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/weather-app/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
     "static/media/fontawesome-webfont.eot": "/weather-app/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/weather-app/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
-    "static/media/Inter-ExtraBoldItalic.woff2": "/weather-app/static/media/Inter-ExtraBoldItalic.aec47db441fde7da8c33.woff2",
-    "static/media/Inter-BoldItalic.woff2": "/weather-app/static/media/Inter-BoldItalic.21c58fc495f4efcff84c.woff2",
-    "static/media/Inter-MediumItalic.woff2": "/weather-app/static/media/Inter-MediumItalic.8ec956fb082ce092742f.woff2",
-    "static/media/Inter-SemiBoldItalic.woff2": "/weather-app/static/media/Inter-SemiBoldItalic.9a29a242a47db82ea071.woff2",
-    "static/media/InterDisplay-ExtraBoldItalic.woff2": "/weather-app/static/media/InterDisplay-ExtraBoldItalic.4dcb197ef83d3558dbdc.woff2",
-    "static/media/InterDisplay-BoldItalic.woff2": "/weather-app/static/media/InterDisplay-BoldItalic.439cef167a628cb21856.woff2",
-    "static/media/Inter-LightItalic.woff2": "/weather-app/static/media/Inter-LightItalic.42c85884278802922cd9.woff2",
-    "static/media/Inter-ThinItalic.woff2": "/weather-app/static/media/Inter-ThinItalic.82ab8d90656d72d0453d.woff2",
-    "static/media/Inter-SemiBold.woff2": "/weather-app/static/media/Inter-SemiBold.3be6b9e3b22c24eaada7.woff2",
-    "static/media/Inter-Medium.woff2": "/weather-app/static/media/Inter-Medium.9c1163dc5cc2a1c9b55b.woff2",
-    "static/media/Inter-ExtraBold.woff2": "/weather-app/static/media/Inter-ExtraBold.1a0b36c51217b94a825d.woff2",
-    "static/media/Inter-Bold.woff2": "/weather-app/static/media/Inter-Bold.c3c9f10a4dbfc7314a59.woff2",
-    "static/media/InterDisplay-ExtraBold.woff2": "/weather-app/static/media/InterDisplay-ExtraBold.89518fa4ab7bacdb30e6.woff2",
-    "static/media/InterDisplay-Bold.woff2": "/weather-app/static/media/InterDisplay-Bold.f5ec5e21f616f430d4ba.woff2",
-    "static/media/Inter-Light.woff2": "/weather-app/static/media/Inter-Light.d6125db9dd20399de932.woff2",
-    "static/media/Inter-Regular.woff2": "/weather-app/static/media/Inter-Regular.76224c7fa303861462e7.woff2",
-    "static/media/Inter-Thin.woff2": "/weather-app/static/media/Inter-Thin.2deca9291ec28e5bbe13.woff2",
     "static/media/fontawesome-webfont.woff?v=4.7.0": "/weather-app/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/weather-app/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
     "index.html": "/weather-app/index.html",
-    "main.f0363ebc.css.map": "/weather-app/static/css/main.f0363ebc.css.map",
-    "main.fea0b88a.js.map": "/weather-app/static/js/main.fea0b88a.js.map"
+    "main.3c987ebb.css.map": "/weather-app/static/css/main.3c987ebb.css.map",
+    "main.f5b887a3.js.map": "/weather-app/static/js/main.f5b887a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0363ebc.css",
-    "static/js/main.fea0b88a.js"
+    "static/css/main.3c987ebb.css",
+    "static/js/main.f5b887a3.js"
   ]
 }
