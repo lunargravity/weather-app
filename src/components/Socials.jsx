@@ -17,7 +17,7 @@ export default function Socials() {
           href='https://www.linkedin.com/in/anu-altankhuyag/'
           target='_blank'
           rel='noopener noreferrer'>
-          <i class='fa fa-linkedin'></i>
+          <i className='fa fa-linkedin'></i>
         </a>
       </h4>
     </div>

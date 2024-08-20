@@ -7,21 +7,25 @@ export default function SearchBar({ setLocation }) {
 
   const onSearch = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      if (data.results) {
-        setLocation({
-          address: data.results[0].formatted,
-          latitude: data.results[0].geometry.lat,
-          longitude: data.results[0].geometry.lng,
-          timezone: data.results[0].annotations.timezone.name,
-        });
-      } else {
-        setLocation('Invalid location');
+    if (query) {
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        if (data.results) {
+          setLocation({
+            address: data.results[0].formatted,
+            latitude: data.results[0].geometry.lat,
+            longitude: data.results[0].geometry.lng,
+            timezone: data.results[0].annotations.timezone.name,
+          });
+        } else {
+          setLocation('Invalid location');
+        }
+      } catch (error) {
+        setLocation('Fetching error');
       }
-    } catch (error) {
-      setLocation('Fetching error');
+    } else {
+      console.log('there was an error with your search');
     }
   };
 
