@@ -53,5 +53,5 @@ Open your browser and navigate to `http://localhost:3000`
 
 ## API Troubleshooting
 
-- Correct City Name: Ensure the city name is spelled correctly. An incorrect city name may prevent the app from finding the location.
+- Correct City Name: Ensure the city name is spelled correctly. An incorrect city name will automatically set the location to **Needmore, Texas, USA**. If there is an error when fetching the city, the location will be set to **Nowhere, Oklahoma, USA**. (_I hope that you think that's funny_).
 - API Rate Limits: Due to the limited number of requests allowed with the free trial API key, you may encounter restrictions after a certain number of requests. To avoid this, you can sign up for your own API key and replace the existing one in the code.
