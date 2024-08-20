@@ -53,5 +53,5 @@ Open your browser and navigate to `http://localhost:3000`
 
 ## API Troubleshooting
 
-- If you do not write the city name correctly, it will not be able to find the location.
-- There is a limit to how many requests can be made because of my api key free trial. If you want to make more requests, you can sign up for your own api keys and replace it in the code
+- Correct City Name: Ensure the city name is spelled correctly. An incorrect city name may prevent the app from finding the location.
+- API Rate Limits: Due to the limited number of requests allowed with the free trial API key, you may encounter restrictions after a certain number of requests. To avoid this, you can sign up for your own API key and replace the existing one in the code.
