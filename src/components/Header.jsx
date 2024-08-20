@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../css/header.css';
 import DateClass from './DateClass';
 import SearchBar from './SearchBar';
 

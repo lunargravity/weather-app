@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './css/toggle.css';
 import ForecastWidget from './components/ForecastWidget';
 import Header from './components/Header';
 import Toggle from './components/Toggle';

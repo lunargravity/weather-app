@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../css/events.css';
 import EventWidget from './EventWidget';
 
 export default function Events({ location }) {

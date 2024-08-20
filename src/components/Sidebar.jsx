@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../css/sidebar.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 export default function Sidebar({
