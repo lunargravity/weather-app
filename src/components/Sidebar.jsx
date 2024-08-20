@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../css/sidebar.css';
 import 'font-awesome/css/font-awesome.min.css';
+import Socials from './Socials';
 
 export default function Sidebar({
   favoriteCities,
@@ -70,6 +71,9 @@ export default function Sidebar({
               );
             })}
           </ul>
+        </div>
+        <div>
+          <Socials />
         </div>
       </div>
     </div>
