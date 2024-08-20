@@ -13,6 +13,30 @@
   display: flex;
 }
 
+@media (min-width: 300px) {
+  .toggle-title-container .title {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 400px) {
+  .toggle-title-container .title {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 600px) {
+  .toggle-title-container .title {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  .toggle-title-container .title {
+    font-size: 25px;
+  }
+}
+
 /*/ //////////////////////////////////////////////////////
 //////////////////////TOGGLE CSS/////////////////////////
 ///////////////////////////////////////////////////////*/

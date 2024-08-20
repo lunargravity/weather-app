@@ -68,21 +68,53 @@ header form {
   color: var(--color-ghost-white);
 }
 
-.header-container .app-title {
+.header-container .app-title,
+.header-container .current-time {
   color: var(--color-oxford-blue);
   font-family: var(--font-family-main);
-  font-size: 20px;
   font-weight: 600;
-  height: 20px;
+  height: auto;
+  margin: 0;
 }
 
 .header-container .current-time {
   color: var(--color-electric-indigo);
-  font-family: var(--font-family-main);
-  font-size: 20px;
-  font-weight: 600;
-  height: 20px;
-  margin: 0;
+}
+
+@media (min-width: 300px) {
+  .header-container .app-title,
+  .header-container .current-time {
+    font-size: 12px;
+  }
+
+  .header-container .current-time {
+    margin-left: 5px;
+  }
+}
+
+@media (min-width: 400px) {
+  .header-container .app-title,
+  .header-container .current-time {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 600px) {
+  .header-container .app-title,
+  .header-container .current-time {
+    font-size: 18px;
+  }
+
+  .header-container .current-time {
+    margin-left: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-container .app-title,
+  .header-container .current-time {
+    font-size: 20px;
+  }
 }
 
 .expand-search {
