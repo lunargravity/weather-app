@@ -14,7 +14,7 @@ This is a basic weather web application that shows you the weather for the curre
 ![area events via ticketmaster](public/images/area%20events%20via%20ticketmaster.png)
 ![favorite cities storage](public/images/favorite%20cities%20storage.png)
 
-## Deployment
+## Running the Project on Your Local Machine
 
 Clone the repository:
 
@@ -36,7 +36,9 @@ npm start
 
 Open your browser and navigate to `http://localhost:3000`
 
+## Dependencies
+
 ## API Troubleshooting
 
 - If you do not write the city name correctly, it will not be able to find the location.
-- There is a limit to how many requests can be made.
+- There is a limit to how many requests can be made because of my api key free trial. If you want to make more requests, you can sign up for your own api keys and replace it in the code
